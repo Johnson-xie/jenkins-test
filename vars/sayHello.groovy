@@ -18,18 +18,20 @@ def call(String name = 'human') {
 
   println nodes
 
-//   script {
-//       sh "echo hello world"
-//   }
-
   def list = [1,2,3,4]
   for(item in list){
       println item
   }
 
-//   nodes.each { k,v ->
-//         sh '''
-//             echo ${k} ${v}
-//         '''
-//   }
+  def func = [:]
+
+  nodes.each { k,v ->
+        func[k] = {
+                sh '''
+                    echo ${k} ${v}
+                '''
+        }
+  }
+
+  parallel func
 }
