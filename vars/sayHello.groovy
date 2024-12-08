@@ -16,6 +16,8 @@ def call(String name = 'human') {
 
   def nodes = "172.24.9.99 172.24.9.75".split(" ")
 
+  def serverVersionList = "1234134 24124 134234".split(" ")
+
   println nodes
 
   def list = [1,2,3,4]
@@ -25,11 +27,15 @@ def call(String name = 'human') {
 
   def func = [:]
 
-  nodes.each { k,v ->
+
+  // 先并行，再串行
+  nodes.each { k ->
         func[k] = {
-                sh """
-                    echo ${k} ${v}
+            for (server in serverVersionList) {
+                sh label: 'echo', script: """
+                    echo ${k} ${server}
                 """
+            }
         }
   }
 
