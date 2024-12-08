@@ -21,8 +21,7 @@ def call(String name = 'human') {
 
   nodes.each { node ->
         sh '''
-            echo ${node}
+            echo ${nodes}
         '''
-
   }
 }
