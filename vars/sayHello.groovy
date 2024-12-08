@@ -16,8 +16,6 @@ def call(String name = 'human') {
   println nodes
 
   for (node in nodes) {
-       sh """
-            echo ${node}
-       """
+       sh "echo ${node}"
   }
 }
