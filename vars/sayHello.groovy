@@ -22,9 +22,14 @@ def call(String name = 'human') {
       sh "echo hello world"
   }
 
-  nodes.each { k,v ->
-        sh '''
-            echo ${k} ${v}
-        '''
+  def list = [1,2,3,4]
+  for(item in list){
+      println item
   }
+
+//   nodes.each { k,v ->
+//         sh '''
+//             echo ${k} ${v}
+//         '''
+//   }
 }
