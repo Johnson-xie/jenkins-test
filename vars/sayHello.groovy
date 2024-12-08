@@ -11,14 +11,11 @@ def call(String name = 'human') {
         }
   )
 
-  script {
-        sh '''
-            for node in "172.24.9.99 172.24.9.75"
-            do
-                echo $node
-            done
+  def nodes = "172.24.9.99 172.24.9.75".split(" ")
 
-        '''
+  for (node in nodes) {
+       sh '''
+            echo ${node}
+       '''
   }
-
 }
