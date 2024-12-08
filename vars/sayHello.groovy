@@ -15,6 +15,10 @@ def call(String name = 'human') {
 
   println nodes
 
+  script {
+      sh "echo hello world"
+  }
+
   nodes.each { node ->
         sh '''
             echo ${node}
