@@ -33,5 +33,5 @@ def call(String name = 'human') {
         }
   }
 
-//   parallel func
+  parallel func
 }
