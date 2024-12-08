@@ -13,9 +13,11 @@ def call(String name = 'human') {
 
   def nodes = "172.24.9.99 172.24.9.75".split(" ")
 
+  println nodes
+
   for (node in nodes) {
-       sh '''
+       sh """
             echo ${node}
-       '''
+       """
   }
 }
