@@ -15,7 +15,10 @@ def call(String name = 'human') {
 
   println nodes
 
-  for (node in nodes) {
-       sh "echo ${node}"
+  nodes.each { node ->
+        sh '''
+            echo ${node}
+        '''
+
   }
 }
