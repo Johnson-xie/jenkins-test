@@ -27,11 +27,11 @@ def call(String name = 'human') {
 
   nodes.each { k,v ->
         func[k] = {
-                sh '''
+                sh """
                     echo ${k} ${v}
-                '''
+                """
         }
   }
 
-  parallel func
+//   parallel func
 }
