@@ -18,9 +18,9 @@ def call(String name = 'human') {
 
   println nodes
 
-  script {
-      sh "echo hello world"
-  }
+//   script {
+//       sh "echo hello world"
+//   }
 
   def list = [1,2,3,4]
   for(item in list){
