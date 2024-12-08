@@ -22,9 +22,9 @@ def call(String name = 'human') {
       sh "echo hello world"
   }
 
-  nodes.each { node ->
+  nodes.each { k,v ->
         sh '''
-            echo ${nodes}
+            echo ${k} ${v}
         '''
   }
 }
